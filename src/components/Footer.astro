@@ -3,6 +3,8 @@ const today = new Date();
 ---
 
 <footer>
+	<hr style="color: #549c9c;">
+	</hr>
 	&copy; {today.getFullYear()} Your name here. All rights reserved.
 	<div class="social-links">
 		<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -42,9 +44,13 @@ const today = new Date();
 <style>
 	footer {
 		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		background: #012525;
 		color: rgb(var(--gray));
 		text-align: center;
+		position: fixed;
+		bottom: 0;
+		width:100%;
+		height:min-content;
 	}
 	.social-links {
 		display: flex;
