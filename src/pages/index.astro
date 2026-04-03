@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import classes from '../global.css';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -27,7 +28,23 @@ const posts = (await getCollection('blog')).sort(
 		<main class="anonymous-pro-regular">
 			<section>
 				<p>
-				test test this is a test for the main pages
+				this is the home page.
+
+				try clicking on one of the links<br>
+
+						 {
+							posts.map((post) => (
+								
+									<a href={`/blog/${post.id}/`} style=text-decoration:none;>
+										{post.data.title}
+									</a>
+									<p style="color: ;">|</p>
+							))
+						}
+						
+
+
+				
 				
 				</p>
 			</section>
